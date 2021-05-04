@@ -1,0 +1,49 @@
+.frame {
+  background: var(--bg-color-default);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+
+  &__brand {
+    position: absolute;
+    width: 154px;
+    height: 28px;
+    left: 72px;
+    top: 100px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-style: oblique;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    position: absolute;
+    width: 656px;
+    height: 68px;
+    left: 72px;
+    top: 247px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 68px;
+    letter-spacing: -0.6px;
+    color: #FFFFFF;
+  }
+
+  &__paragraph {
+    position: absolute;
+    width: 656px;
+    height: 40px;
+    left: 72px;
+    top: 354.66px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 40px;
+    color: #FFFFFF;
+  }
+}
