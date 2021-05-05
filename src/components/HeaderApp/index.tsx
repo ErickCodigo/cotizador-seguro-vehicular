@@ -21,7 +21,7 @@ export default function HeaderApp(props: HeaderAppInterface) {
                 <div className="flex flex-nowrap items-center">
                     <ButtonBase className="text-sm mr-3 text-gray-400 hidden md:inline-block"
                                 text="¿Tienes alguna duda?"/>
-                    <Button type="ButtonCall" text={text}/>
+                    <Button variant="ButtonCall" text={text}/>
                 </div>
             </div>
         </div>

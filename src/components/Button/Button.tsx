@@ -3,8 +3,8 @@ import * as Buttons from "./index";
 import {ButtonHandler} from "./models/Button";
 
 export default function Button(props: ButtonHandler) {
-    const {type, ...rest} = props;
-    const Component = Buttons[type] || Buttons["ButtonBase"];
+    const {variant, ...rest} = props;
+    const Component = Buttons[variant] || Buttons["ButtonBase"];
 
     return <Component {...rest} />;
 }

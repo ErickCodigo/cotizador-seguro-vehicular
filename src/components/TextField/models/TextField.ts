@@ -1,11 +1,7 @@
-import React from "react";
+import React, {InputHTMLAttributes} from "react";
 
-export interface TextField {
-    name?: string;
-    value?: string;
+export interface TextField extends InputHTMLAttributes<HTMLInputElement>{
     onChange?: (event?: React.FormEvent<HTMLInputElement>) => void;
-    className?: string;
-    placeholder?: string;
 }
 
 export interface SelectOption {
