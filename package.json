@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev && NODE_ENV=development postcss tailwind.css -o ./dist/tailwind.css -w",
+    "build": "next build && NODE_ENV=production postcss tailwind.css -o ./dist/tailwind.css",
     "start": "next start"
   },
   "dependencies": {
