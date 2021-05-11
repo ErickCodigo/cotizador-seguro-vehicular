@@ -1,4 +1,4 @@
-export class ApiLocalStorage {
+export class ApiLocalStorage<T> {
     private readonly endpoint: string;
 
     constructor(endpoint) {
@@ -9,35 +9,40 @@ export class ApiLocalStorage {
         window.sessionStorage.setItem(this.endpoint, JSON.stringify(data));
     }
 
-    getData(): any {
+    getData(): T[] {
         return JSON.parse(window.sessionStorage.getItem(this.endpoint));
     }
 
-    async findOne(prop: string, value: number | string) {
-        return (await this.getData()).find(x => x[prop] === value) || {};
+    findOne(prop: string, value: number | string): T {
+        return this.getData().find(x => x[prop] === value);
     }
 
-    saveItem(newItem) {
+    saveItem(newItem: T): T {
         const data = this.getData();
         data.push(newItem);
+
         this.saveData(data);
 
         return newItem;
     }
 
-    updateItem(id, newItem) {
+    updateItem(id: number, newItem): T {
         const data = this.getData();
+        // @ts-ignore
         const itemIndex = data.findIndex(x => x.id === id);
+        // @ts-ignore
+        const item = data.find(x => x.id === id);
 
         data.splice(itemIndex, 1, newItem);
 
         this.saveData(data);
 
-        return newItem;
+        return item;
     }
 
-    deleteItem(id) {
+    deleteItem(id: number): T {
         const data = this.getData();
+        // @ts-ignore
         const itemIndex = data.findIndex(x => x.id === id);
 
         const deletedItem = data.splice(itemIndex, 1)[0];
