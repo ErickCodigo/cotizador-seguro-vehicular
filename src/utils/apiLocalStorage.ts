@@ -1,5 +1,5 @@
 export class ApiLocalStorage {
-    private readonly endpoint:string;
+    private readonly endpoint: string;
 
     constructor(endpoint) {
         this.endpoint = endpoint;
@@ -13,8 +13,8 @@ export class ApiLocalStorage {
         return JSON.parse(window.sessionStorage.getItem(this.endpoint));
     }
 
-    async getOneData(id: number) {
-        return await this.getData().find(x => x.id === id) || {};
+    async findOne(prop: string, value: number | string) {
+        return (await this.getData()).find(x => x[prop] === value) || {};
     }
 
     saveItem(newItem) {

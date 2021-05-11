@@ -38,10 +38,10 @@ export class ApiPolicyholder {
         return await this.apiLocalStorage.getData();
     }
 
-    async showOne(id: number) {
+    async findOne(prop: string, value: number | string) {
         // const endpoint = this.baseEndpoint.concat(`/${id}`);
         // return await (await fetch(endpoint)).json();
-        return this.apiLocalStorage.getOneData(id);
+        return this.apiLocalStorage.findOne(prop, value);
     }
 
     async update(id: number, newData: DataUpdate) {
