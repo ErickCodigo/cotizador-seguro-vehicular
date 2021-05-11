@@ -1,17 +1,15 @@
 import {ReactElement} from "react";
-import HeaderApp from "../src/components/HeaderApp";
 import Billboard from "../src/components/Billboard";
 import FormContact from "../src/components/FormContact";
+import Layout from "../src/components/Layout";
 
 export default function Home(): ReactElement {
-
-    return (
-        <div>
-            <HeaderApp />
-            <div className="MainContent">
-                <Billboard className="MainContentItem1" />
-                <FormContact className="MainContentItem2" />
+        return (
+        <Layout>
+            <div className="MainContent pb-4 md:pb-0">
+                <Billboard className="flex40"/>
+                <FormContact className="flex60"/>
             </div>
-        </div>
+        </Layout>
     );
 }
