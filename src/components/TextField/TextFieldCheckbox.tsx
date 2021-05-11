@@ -1,5 +1,5 @@
 import {TextField as TextFieldInterface} from "./models/TextField";
-import IconChecklist from "../Icon/IconChecklist";
+import IconCheckbox from "../Icon/IconCheckbox";
 
 export default function TextFieldCheckbox(props: TextFieldInterface) {
     const {...rest} = props;
@@ -10,7 +10,7 @@ export default function TextFieldCheckbox(props: TextFieldInterface) {
                 {...rest}
                 className="TextFieldCheckbox"
                 type="checkbox"/>
-            <IconChecklist className="TextFieldCheckboxIcon"/>
+            <IconCheckbox className="TextFieldCheckboxIcon"/>
         </div>
     )
 }

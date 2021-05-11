@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import {IconCheckList as IconCheckListInterface} from "./models/IconCheckList";
+import {IconCheckbox as IconCheckListInterface} from "./models/IconCheckbox";
 
-export default function IconChecklist(props: IconCheckListInterface) {
+export default function IconCheckbox(props: IconCheckListInterface) {
     const {className, ...rest} = props;
 
     return (
