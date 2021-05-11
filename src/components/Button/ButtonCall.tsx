@@ -1,9 +1,10 @@
 import React from "react";
 import ButtonBase from "./ButtonBase";
 import {ButtonCall as ButtonCallInterface} from "./models/Button";
+import clsx from "clsx";
 
 export default function ButtonCall(props: ButtonCallInterface) {
-    const {text} = props;
+    const {text, className, ...rest} = props;
 
     const IconSVGCall = (
         <svg
@@ -23,7 +24,8 @@ export default function ButtonCall(props: ButtonCallInterface) {
 
     return (
         <ButtonBase
-            className="flex items-center button-call"
+            {...rest}
+            className={clsx("flex items-center button-call", className && className)}
             text={text}
             iconLeft={IconSVGCall}
         />

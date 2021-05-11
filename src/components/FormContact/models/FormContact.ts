@@ -9,7 +9,8 @@ interface VehicleDocument {
 }
 
 export interface TextFields {
-    documentType: string;
+    documentType: 'dni' | 'carnet-de-extranjeria' | 'registro-unico-de-contribuyente' | 'pasaporte';
+    documentNumber: string;
     phoneNumber: string;
     licensePlate: string;
     acceptTermsAndConditions: boolean;

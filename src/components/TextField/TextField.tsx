@@ -10,7 +10,6 @@ export default function TextField(props: TextFieldInterface) {
             {...rest}
             type="text"
             placeholder={placeholder}
-            className={clsx("mb-5 p-3 border-gray-300 border rounded", className && className)}
-            style={{width: "100%"}}/>
+            className={clsx("mb-5 p-3 border-gray-300 border rounded w-full", className && className)}/>
     )
 }

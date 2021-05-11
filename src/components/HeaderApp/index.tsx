@@ -14,14 +14,16 @@ export default function HeaderApp(props: HeaderAppInterface) {
 
     return (
         <div className={clsx("HeaderApp", className && className)}>
-            <div className="w-full max-w-screen-lg mx-auto flex items-center justify-between">
+            <div className="w-full h-full max-w-screen-lg mx-auto flex items-center justify-between">
                 <div>
                     <Logo/>
                 </div>
                 <div className="flex flex-nowrap items-center">
-                    <ButtonBase className="text-sm mr-3 text-gray-400 hidden md:inline-block"
-                                text="¿Tienes alguna duda?"/>
-                    <Button variant="ButtonCall" text={text}/>
+                    <ButtonBase
+                        className="text-xs mr-3 text-gray-400 hidden md:inline-block"
+                        text="¿Tienes alguna duda?"/>
+
+                    <Button className="text-sm" variant="ButtonCall" text={text}/>
                 </div>
             </div>
         </div>

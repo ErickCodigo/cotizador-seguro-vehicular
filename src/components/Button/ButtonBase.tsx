@@ -2,10 +2,10 @@ import React from "react";
 import {ButtonBase as ButtonBaseInterface} from "./models/Button";
 
 export default function ButtonBase(props: ButtonBaseInterface) {
-    const {text, className, type, iconLeft, iconRight, style} = props;
+    const {text, iconLeft, iconRight, ...rest} = props;
 
     return (
-        <button type={type} className={className} style={style}>
+        <button {...rest}>
             {iconLeft}
             {text}
             {iconRight}

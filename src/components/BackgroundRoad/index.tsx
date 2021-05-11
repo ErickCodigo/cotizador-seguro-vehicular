@@ -1,7 +1,6 @@
 import React from "react";
 import {BackgroundRoad as BackgroundRoadInterface} from "./models/BackgroundRoad";
 
-
 export default function BackgroundRoad(props: BackgroundRoadInterface) {
     const {className, style} = props;
 
@@ -1185,6 +1184,6 @@ export default function BackgroundRoad(props: BackgroundRoadInterface) {
                 <image id="image0"
                        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAACCAYAAACQahZdAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"/>
             </defs>
-        </svg>)
-
+        </svg>
+    )
 }

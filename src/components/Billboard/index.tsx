@@ -7,8 +7,11 @@ export default function Billboard(props: BillboardInterface) {
     const { className, style } = props;
 
     return (
-        <div className={clsx("Billboard", className && className)} style={style}>
-            <div className="BillboardWrapper">
+        <div
+            className={clsx(className && className, "Billboard")}
+            style={style}>
+
+            <div className="BillboardRelativeBackground">
                 <BackgroundRoad className="hidden md:block" />
                 <BackgroundRoadMovil className="md:hidden" />
             </div>
