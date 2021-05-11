@@ -1,6 +1,5 @@
 import {TextField} from "./models/TextField";
 import clsx from "clsx";
-import IconChecklist from "../Icon/IconChecklist";
 import IconRadio from "../Icon/IconRadio";
 
 export default function TextFieldRadio(props: TextField) {

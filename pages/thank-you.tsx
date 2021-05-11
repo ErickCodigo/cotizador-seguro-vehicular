@@ -55,7 +55,3 @@ export default function ThankYou() {
         </Layout>
     )
 }
-
-/*TODO:
-* Al momento de ingresar el DNI tiene que ser validado para que luego se puede obtener el correo.
-* */

@@ -11,8 +11,3 @@ export default function FormGroup(props: FormGroupInterface) {
         </div>
     )
 }
-
-/*TODO:
-* Este componente debe ser capaz de tomar a su hijos y asigarle las clases necesarias
-* para que se mantenga el diseño actual.
-* */

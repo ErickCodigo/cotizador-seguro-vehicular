@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import {IconCheckList as IconCheckListInterface} from "./models/IconCheckList";
 
-export default function IconChecklist({className, onClick}: IconCheckListInterface) {
+export default function IconChecklist(props: IconCheckListInterface) {
+    const {className, ...rest} = props;
 
     return (
         <svg
-            onClick={onClick}
+            {...rest}
             className={clsx("IconChecklistOutline", className && className)}
             viewBox="0 0 11 9"
             fill="none" xmlns="http://www.w3.org/2000/svg">
