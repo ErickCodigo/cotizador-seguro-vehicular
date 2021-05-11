@@ -1,6 +1,6 @@
 import React from "react";
+import {GeneralProperties} from "../../../generalModels";
 
-export interface IconCheckList {
-    className?: string;
+export interface IconCheckList extends GeneralProperties{
     onClick?: (event?: React.MouseEvent<SVGSVGElement>) => void;
 }
