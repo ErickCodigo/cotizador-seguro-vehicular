@@ -2,7 +2,7 @@ import Layout from "../src/components/Layout";
 import Button from "../src/components/Button/Button";
 import {useVehicleInsuranceValues} from "../src/context/VehicleInsure/context";
 import {useEffect, useState} from "react";
-import {ApiPolicyholder} from "../src/utils/api";
+import {ApiPolicyholder} from "../src/utils/ApiPolicyholder";
 
 export default function ThankYou() {
     const {state} = useVehicleInsuranceValues();
