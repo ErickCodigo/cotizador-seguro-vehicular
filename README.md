@@ -8,6 +8,14 @@ npm install
 # or
 yarn install
 ```
+
+## DNI disponibles:
+- 15784947
+- 15784564
+- 15786416
+- 15786927
+- 15783540
+
 ## Librerías utilizadas:
 
 - clsx: Validar clases css (funcional)
