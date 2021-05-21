@@ -1,4 +1,5 @@
 module.exports = {
+    mode: 'jit',
     // Optimizar: Elimina las clases sin usar
     purge: [
         './pages/**/*.{js,ts,jsx,tsx}',
