@@ -1,33 +1,27 @@
-import clsx from "clsx";
+import Link from "next/link";
 import IconArrowToLeftBordered from "../Icon/IconArrowToLeftBordered";
 import Select from "../TextField/Select";
 import TextFieldRadio from "../TextField/TextFieldRadio";
 import TextFieldNumber from "../TextField/TextFieldNumber";
 import Button from "../Button/Button";
-import {GeneralProperties} from "../../generalModels";
-import IconCar from "../Icon/IconCar";
 import {useVehicleInsuranceValues} from "../../context/VehicleInsure/context";
-import Link from "next/link";
+import {NotFoundModels} from "../NotFoundModels";
+import {useEffect, useState} from "react";
+import {ApiPolicyholder} from "../../utils/ApiPolicyholder";
 
-function CallToAction(props: GeneralProperties) {
-    const {className} = props;
-
-    return (
-        <div className={clsx("bg-purple-50 mb-8 px-3 py-4 flex rounded-md", className && className)}>
-            <div className="mr-4">
-                <IconCar/>
-            </div>
-            <div>
-                <p style={{color: "var(--gray-light-2)"}}>¿No encuentras el modelo?</p>
-                <a className="uppercase block text-purple-400 text-xs font-bold block mt-1" href="">Clic
-                    Aquí</a>
-            </div>
-        </div>
-    )
-}
+const yearsVehicles = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"];
+const vehiclesMakes = ["Wolkswagen", "Chevrolet", "Nissan", "Toyota", "Mercedez", "Hunday", "Ferrari"];
 
 export default function FormCarData({changeStep}) {
     const {state, setState} = useVehicleInsuranceValues();
+    const [username, setUsername] = useState("");
+
+    useEffect(() => {
+        const match = new ApiPolicyholder().findOne("dni", state.documentNumber);
+
+        setUsername(match?.username || "Erick");
+
+    }, [])
 
     function handlerSubmit(e) {
         e.preventDefault()
@@ -57,7 +51,7 @@ export default function FormCarData({changeStep}) {
                             Volver
                         </a>
                     </Link>
-                    <h1 className="BillboardTitle">¡Hola <span className="BillboardTitleHighlighted">Juan</span>!
+                    <h1 className="BillboardTitle">¡Hola <span className="BillboardTitleHighlighted">{username}</span>!
                     </h1>
                     <p className="BillboardParagraph md:mb-8">Completa los datos de tu auto</p>
                 </div>
@@ -71,16 +65,10 @@ export default function FormCarData({changeStep}) {
                         onChange={handlerChange}
                         className="mb-5"
                         placeholder="Año">
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
+
+                        {yearsVehicles.map(x => (
+                            <option key={x} value={x}>{x}</option>
+                        ))}
                     </Select>
 
                     <Select
@@ -89,16 +77,13 @@ export default function FormCarData({changeStep}) {
                         name="vehicleMake"
                         className="mb-5 md:mb-10"
                         placeholder="Marca">
-                        <option value="Wolkswagen">Wolkswagen</option>
-                        <option value="Chevrolet">Chevrolet</option>
-                        <option value="Nissan">Nissan</option>
-                        <option value="Toyota">Toyota</option>
-                        <option value="Mercedez">Mercedez benz</option>
-                        <option value="Hunday">Hunday</option>
-                        <option value="Ferrari">Ferrari</option>
+
+                        {vehiclesMakes.map(x => (
+                            <option key={x} value={x}>{x}</option>
+                        ))}
                     </Select>
 
-                    <CallToAction className="md:hidden"/>
+                    <NotFoundModels className="md:hidden"/>
 
                     <div className="mb-8 md:flex">
                         <h3 className="mb-3 md:mr-4 md:mb-0 text-lg md:text-base">¿Tu auto es a gas?</h3>
@@ -153,7 +138,7 @@ export default function FormCarData({changeStep}) {
                         text="Continuar"/>
                 </form>
                 <div className="hidden md:block ml-12">
-                    <CallToAction/>
+                    <NotFoundModels/>
                 </div>
             </div>
         </div>
