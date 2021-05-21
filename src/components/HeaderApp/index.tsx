@@ -25,8 +25,6 @@ export default function HeaderApp(props: HeaderAppInterface) {
             return {...accumulator, [key]: value}
         }, {})
 
-        console.log("Reset Data", resetData)
-
         // @ts-ignore
         setState(() => ({...resetData}));
 
