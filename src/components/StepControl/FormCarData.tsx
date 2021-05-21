@@ -19,7 +19,7 @@ export default function FormCarData({changeStep}) {
     useEffect(() => {
         const match = new ApiPolicyholder().findOne("dni", state.documentNumber);
 
-        setUsername(match?.username || "Erick");
+        setUsername(match?.username || "");
 
     }, [])
 
